@@ -6,18 +6,20 @@ from words import word_list
 from game_effects import GameColors as Colors
 from hangman_stages import display_hangman
 
-
 #Functions section
 def get_random_word(word_list):
     """
-    Function to select a random word from the list and return the letter in uppercase.
+    Function to select a random word from the list and 
+    return the letter in uppercase.
     """
     word = random.choice(word_list) 
     return word.upper()
 
 def game(word):
     """
-     This function manages the Hangman game, taking player inputs, updating the game state, and providing appropriate feedback to the player until the game is over.
+     This function manages the Hangman game, taking player inputs,
+     updating the game state, and providing appropriate feedback 
+     to the player until the game is over.
     """
     #Variables 
     secret_word = "_" * len(word)
@@ -53,6 +55,29 @@ def game(word):
                 if "_" not in secret_word:
                     guessed = True
                     secret_word = word
+
+        #second condition: guessing a word
+        elif len(guess) == len(word) and guess.isalpha():
+            #conditional block
+            if guess in guessed_letters:
+                print(game_ascii_art.VICTORY)
+            elif guess != word:
+                print("Unfortunately {} is not in the word".format(guess))
+                remaining_attempts -= 1
+                guessed_words.append(guess)
+            else:
+                guessed = True
+                secret_word = word
+        # third condition: something other than a single letter
+        else:
+           print("Not a valid guess")
+           print("word")
+        #after every guess is handled, the word and hangman current state is printed
+        print(display_hangman(remaining_attempts))
+        print(secret_word)   
+        
+        
+
 
 def main():
     """
