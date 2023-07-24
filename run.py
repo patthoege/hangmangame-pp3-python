@@ -32,18 +32,18 @@ def game(word):
     print("\n")
     #a while loop will run until user guess or runs out of tries
     while not guessed and remaining_attempts > 0:
-        guess = input("Enter a letter: ").upper()
+        guess = input(Colors.Magenta + "Enter a letter: ").upper()
         #first condition: guessing a letter
         if len(guess) == 1 and guess.isalpha():
             #conditional block
             if guess in guessed_letters:
-                print("You already guessed the letter {}".format(guess))
+                print(Colors.Yellow + "You already guessed the letter {}".format(guess))
             elif guess not in word:
-                print("Unfortunately {} is not in the word".format(guess))
+                print(Colors.Yellow + "Unfortunately {} is not in the word".format(guess))
                 remaining_attempts -= 1
                 guessed_letters.append(guess) 
             else:
-                print("Great!{}, is in the word!".format(guess))
+                print(Colors.Green +"Great! {}, is in the word!".format(guess))
                 guessed_letters.append(guess)
                 #convert string to list and enumerates the words if secret_word is equal to guessed letter 
                 new_word_list = list(secret_word)
@@ -60,9 +60,9 @@ def game(word):
         elif len(guess) == len(word) and guess.isalpha():
             #conditional block
             if guess in guessed_letters:
-                print(game_ascii_art.VICTORY)
+                print(Colors.Green + "Great!{}, is in the word!".format(guess))
             elif guess != word:
-                print("Unfortunately {} is not in the word".format(guess))
+                print(Colors.Yellow + "Unfortunately {} is not in the word".format(guess))
                 remaining_attempts -= 1
                 guessed_words.append(guess)
             else:
@@ -70,15 +70,20 @@ def game(word):
                 secret_word = word
         # third condition: something other than a single letter
         else:
-           print("Not a valid guess")
-           print("word")
+           print(Colors.Red +"Not a valid guess")
         #after every guess is handled, the word and hangman current state is printed
         print(display_hangman(remaining_attempts))
-        print(secret_word)   
-        
-        
+        print(secret_word)  
+        print(word)
+    #check whether the player guess the word correctly or ran out of tries    
+    if guessed:
+        print(game_ascii_art.VICTORY)
+        print(Colors.Green + "Good job! {} is in the word!".format(guess))
+    else:
+        print(game_ascii_art.GAME_OVER) 
+        print(Colors.Cyan +"The word was " + word) 
 
-
+        
 def main():
     """
     this functions gets a random word if the user wants to play 
