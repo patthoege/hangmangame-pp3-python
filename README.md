@@ -30,8 +30,10 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 ---
 
 Happy coding!
-https://www.lucidchart.com/pages/
 
+https://www.lucidchart.com/pages/
+words content
+https://www.hangmanwords.com/words
 Design for logo and game 
 http://patorjk.com/software/taag/#p=display&h=0&v=0&f=Big&t=HANGMAN%0AYOU%20WON!%0AGAME%20OVER%0APLAY%20AGAINß
 https://www.youtube.com/watch?v=Xh7bEIvUQfM
