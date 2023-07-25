@@ -84,7 +84,6 @@ def game(word):
         print(game_ascii_art.GAME_OVER) 
         print(Colors.Cyan +"The word was " + word) 
 
-
 def play_again_or_quit():
     """
     Function to chose whether the player wants to play again or quit the game.
@@ -111,7 +110,7 @@ def main():
     print("Hi " + user_name + "! Time to play! =D")
     time.sleep(1)
     print("Start guessing...\n")
-    time.sleep(0.5)
+    time.sleep(0.5)    
 
     while True:
         word = get_random_word(word_list)
@@ -119,14 +118,8 @@ def main():
         print(game_ascii_art.PLAY_AGAIN)
      
         if not play_again_or_quit():
-           break
-
-    while play_again_or_quit():
-        word = get_random_word(word_list)
-        game(word)
-    # If the player chooses not to play again, exit the program
-    print(Colors.Cyan + "Thanks for playing!")
-    sys.exit()
-
+          print(Colors.Cyan + "Thanks for playing!")
+          sys.exit()
+    
 if __name__ == "__main__":
     main()   
