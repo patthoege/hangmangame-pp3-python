@@ -12,7 +12,7 @@ def display_hangman(remaining_attempts):
                    |      O
                    |     \|/
                    |      |
-                   |     / \
+                   |     / \\
                  - - - 
                 """,
                 # head, torso, both arms, and left leg

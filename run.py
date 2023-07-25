@@ -1,6 +1,7 @@
 #import section
 import random
 import time
+import sys
 import game_ascii_art
 from words import word_list
 from game_effects import GameColors as Colors
@@ -55,7 +56,6 @@ def game(word):
                 if "_" not in secret_word:
                     guessed = True
                     secret_word = word
-
         #second condition: guessing a word
         elif len(guess) == len(word) and guess.isalpha():
             #conditional block
@@ -75,6 +75,7 @@ def game(word):
         print(display_hangman(remaining_attempts))
         print(secret_word)  
         print(word)
+
     #check whether the player guess the word correctly or ran out of tries    
     if guessed:
         print(game_ascii_art.VICTORY)
@@ -83,25 +84,49 @@ def game(word):
         print(game_ascii_art.GAME_OVER) 
         print(Colors.Cyan +"The word was " + word) 
 
+
+def play_again_or_quit():
+    """
+    Function to chose whether the player wants to play again or quit the game.
+    """
+    while True:
+       choice = input(Colors.Yellow + "Next Round?(Y/N) ").upper()
+       if choice == "Y":
+           return True
+       elif choice == "N":
+           return False
+       else:
+           print(Colors.Red + "Invalid choice. Please enter 'Y' OR 'N'.")
         
 def main():
     """
-    this functions gets a random word if the user wants to play 
+    this function gets a random word if the user wants to play 
     another round otherwise ends the game.
     """
-    word = get_random_word(word_list)
-    game(word)
+    #printing starting game
+    print(game_ascii_art.LOGO)
+    print(game_ascii_art.RULES)
+    print(Colors.Red + "Welcome to Hangman!")
+    user_name = input(Colors.Yellow + "Enter your name:")
+    print("Hi " + user_name + "! Time to play! =D")
+    time.sleep(1)
+    print("Start guessing...\n")
+    time.sleep(0.5)
 
-#printing starting game
-print(game_ascii_art.LOGO)
-print(game_ascii_art.RULES)
-print(Colors.Red + "Welcome to Hangman!")
-user_name = input(Colors.Yellow + "Enter your name:")
-print("Hi " + user_name + "! Time to play! =D")
-time.sleep(1)
-print("Start guessing...\n")
-time.sleep(0.5)
- 
+    while True:
+        word = get_random_word(word_list)
+        game(word)
+        print(game_ascii_art.PLAY_AGAIN)
+     
+        if not play_again_or_quit():
+           break
+
+    while play_again_or_quit():
+        word = get_random_word(word_list)
+        game(word)
+    # If the player chooses not to play again, exit the program
+    print(Colors.Cyan + "Thanks for playing!")
+    sys.exit()
 
 if __name__ == "__main__":
     main()   
