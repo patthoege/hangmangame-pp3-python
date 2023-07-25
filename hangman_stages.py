@@ -13,7 +13,8 @@ def display_hangman(remaining_attempts):
                    |     \|/
                    |      |
                    |     / \\
-                 - - - 
+                   |
+                -------- 
                 """,
                 # head, torso, both arms, and left leg
                 """
@@ -23,7 +24,8 @@ def display_hangman(remaining_attempts):
                    |     \|/
                    |      |
                    |     / 
-                 - - -
+                   |
+                --------
                 """,
                 # head, torso, and both arms
                 """
@@ -32,8 +34,9 @@ def display_hangman(remaining_attempts):
                    |      O
                    |     \|/
                    |      |
+                   |
                    |      
-                 - - -
+                --------
                 """,
                 # head, torso, and left arm
                 """
@@ -42,8 +45,9 @@ def display_hangman(remaining_attempts):
                    |      O
                    |     \|
                    |      |
-                   |     
-                 - - -
+                   |
+                   |    
+                --------
                 """,
                 # head and torso
                 """
@@ -52,8 +56,9 @@ def display_hangman(remaining_attempts):
                    |      O
                    |      |
                    |      |
+                   |
                    |     
-                 - - -
+                --------
                 """,
                 # head
                 """
@@ -62,8 +67,9 @@ def display_hangman(remaining_attempts):
                    |      O
                    |    
                    |      
+                   |
                    |     
-                 - - -
+                --------
                 """,
                 # initial state
                 """
@@ -72,8 +78,9 @@ def display_hangman(remaining_attempts):
                    |      
                    |    
                    |      
-                   |     
-                 - - -
+                   | 
+                   |    
+                --------
                 """
     ]
    return stages[remaining_attempts]

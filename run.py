@@ -5,6 +5,7 @@ import sys
 import game_ascii_art
 from words import word_list
 from game_effects import GameColors as Colors
+from game_effects import strip_color_codes
 from hangman_stages import display_hangman
 
 #Functions section
@@ -91,12 +92,23 @@ def play_again_or_quit():
     while True:
        choice = input(Colors.Yellow + "Next Round?(Y/N) ").upper()
        if choice == "Y":
+           print(Colors.Reset)
            return True
        elif choice == "N":
            return False
        else:
            print(Colors.Red + "Invalid choice. Please enter 'Y' OR 'N'.")
-        
+
+def typewriter(text):
+    """
+    Function to add a typewriter effect to print statements
+    """
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(.05)
+    print()
+
 def main():
     """
     this function gets a random word if the user wants to play 
@@ -105,12 +117,15 @@ def main():
     #printing starting game
     print(game_ascii_art.LOGO)
     print(game_ascii_art.RULES)
-    print(Colors.Red + "Welcome to Hangman!")
-    user_name = input(Colors.Yellow + "Enter your name:")
-    print("Hi " + user_name + "! Time to play! =D")
+    typewriter(Colors.Red + "Welcome to Hangman!")
     time.sleep(1)
-    print("Start guessing...\n")
+    user_name = input(Colors.Yellow + "Enter your name:")
+    typewriter("Hi " + user_name + "! Time to play! =D")
+    time.sleep(1)
+    typewriter("Start guessing...\n")
     time.sleep(0.5)    
+
+    print(Colors.Reset)
 
     while True:
         word = get_random_word(word_list)
