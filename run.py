@@ -145,7 +145,7 @@ def main():
     time.sleep(1)
     game_rules()
     time.sleep(3)
-    typewriter(C.Y + "Enter your name:\n")
+    typewriter(C.Y + "Enter your name:")
     print(C.Reset)
     user_name = input().strip()
     typewriter(C.Y + "Hi " + user_name + "! Time to play! =D")
