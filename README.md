@@ -9,6 +9,37 @@ Once the game is over the user is presented with the option to initiate another 
 
 
 
+## Table of Contents
++ [UX](#ux "UX")
+  + [Site Purpose](#site-purpose "Site Purpose")
+  + [Audience](#audience "Audience")
+  + [Communication](#communication "Communication")
+  + [Current User Goals](#current-user-goals "Current User Goals")
+  + [New User Goals](#new-user-goals "New User Goals")
+  + [Future Goals](#future-goals "Future Goals")
++ [Design](#design "Design")
+   + [Wireframes](#wireframes "Wireframes")
++ [Features](#features "Features")
+  + [Existing Features](#existing-features "Existing Features")
+    + [Landing Page](#landing-page "Landing Page")
+    + [Play Again](#play-again "Play Again or Quit App")
+  + [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
++ [Testing](#testing "Testing")
+  + [Validator Testing](#validator-testing "Validator Testing")
+  + [Manual Testing](#manual-testing "Manual Testing")
+  + [Bugs](#bugs "Bugs")
+  + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
++ [Technologies Used](#technologies-used "Technologies Used")
+  + [Main Language](#main-language "Main Language")
+  + [Frameworks, Libraries & Programs](#frameworks-libraries-programs "Frameworks, Libraries & Programs")
++ [Deployment](#deployment "Deployment")
+    + [Version Control](#version-control "Version Control")
+    + [Page Deployment](#page-deployment "Page Deployment")
++ [Credits](#credits "Credits")
+  + [Content](#content "Content")
+  + [Acknowledgements](#acknowledgements "Acknowledgements")
+
+
 ## Creating the Heroku app
 When you create the app, you will need to
 You must then create a _Config Var_ called `PORT`. Set this to `8000`

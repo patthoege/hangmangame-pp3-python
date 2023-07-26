@@ -101,6 +101,23 @@ def play_again_or_quit():
             print(C.R + "Invalid choice. Please enter 'Y' OR 'N'.")
 
 
+def game_rules():
+    """
+    Function to ask the player if they want to read the game rules
+    """
+    while True:
+       typewriter(C.C + "Do you want to read the game rules?(Y/N)")
+       answer = input().upper().strip()
+       if answer == "Y":
+            print(game_ascii_art.RULES)
+            return True
+       elif answer == "N":
+            print(C.Y + "Let's get started!\n")
+            return False
+       else:
+            print(C.R + "Invalid choice. Please enter 'Y' OR 'N'.")
+
+
 def typewriter(text):
     """
     Function to add a typewriter effect to print statements
@@ -119,7 +136,7 @@ def main():
     """
     # printing starting game
     print(game_ascii_art.LOGO)
-    print(game_ascii_art.RULES)
+    game_rules()
     typewriter(C.R + "Welcome to Hangman!")
     time.sleep(1)
     user_name = input(C.Y + "Enter your name:")
