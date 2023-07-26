@@ -96,17 +96,14 @@ Whether the player wins or loses the game, a banner of `Play Again` with its cur
 ### Validator Testing
 - The code has been tested by using [CI PEP8 Online](https://pep8ci.herokuapp.com/). 
 The only error originally found was a blank line left at the end of the file. 
-![PEP8 CI Validation](assets/)
+![PEP8 CI Validation](assets/images-readme/ci-python-linter.png)
 
 ### Manual Testing
 
 ### Bugs
-- The issue I encountered was an ANSI escape codes for colors (e.g., [31m) being included in the text I am passing to the typewriter() function. 
-The issue is that the colorama.init(autoreset=True) line is resetting the color codes to their default values after each call to typewriter(), which was causing the color codes to be stripped.
-To fix this, I needed to avoid resetting the color codes automatically. Instead, I manually reset the color codes after calling the typewriter() function.
-By manually resetting the color codes with print(GameColors.Reset) after calling the typewriter() function, I ensure that the colors will not be stripped, and the typewriter effect should display the text with the correct colors in the terminal. Therefore I created the colors.strip_color_codes() function for this purpose. In the game_effects file I attached the resource link to fix this issue.
+- The issue I encountered was an ANSI escape codes for colors (e.g., [31m) being included in the text I am passing to the typewriter() function. The issue is that the colorama.init(autoreset=True) line is resetting the color codes to their default values after each call to typewriter(), which was causing the color codes to be stripped. To fix this, I needed to avoid resetting the color codes automatically. Instead, I manually reset the color codes after calling the typewriter() function and I created the colors.strip_color_codes() function for this purpose. In the game_effects file, I attached the resource link to fix this issue.
 
-- 
+- Another issue I found was when the text statements from the game were displaying on the console, the hangman stage and the letter were also being affected by their color so I  manually reset the color codes with print(C.Reset) after calling the typewriter() or print()function, I ensure that the colors will not affect the hangman and word in the terminal.
 
 [Back to top](<#table-of-contents>)
 
