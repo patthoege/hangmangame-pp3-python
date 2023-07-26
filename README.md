@@ -28,7 +28,7 @@ Once the game is over the user is presented with the option to initiate another 
   + [Validator Testing](#validator-testing "Validator Testing")
   + [Manual Testing](#manual-testing "Manual Testing")
   + [Bugs](#bugs "Bugs")
-  + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
+  + [Remaining Bugs](#remaining-bugs "Remaining bugs")
 + [Technologies Used](#technologies-used "Technologies Used")
   + [Main Language](#main-language "Main Language")
   + [Frameworks, Libraries & Programs](#frameworks-libraries-programs "Frameworks, Libraries & Programs")
@@ -70,20 +70,23 @@ Make the game more challenging by introducing multiple difficulty levels for the
 ### Existing Features:
 
 #### Landing Page:
-![Landing Page](assets/images/)
+![Landing Page](assets/images-readme/)
 The landing page displays the title of the game, the name of the developer, and a section with game rules. Next, the player has the choice to read the rules of the game or dive straight to play the game. Below this section, there is a prompt for the user to enter their name to begin the game.
 
 #### Possible Outcomes:
-![Possible Outcomes](assets/images/)
-
 The player may encounter three potential scenarios when making a letter choice: 
 + The letter `is` present in the word, the letter  `is not` part of the word.
+  * ![Possible Outcomes](assets/images-readme/guess-is-in-word.png)
 + The letter has been previously guessed by the player. 
+  * ![Possible Outcomes](assets/images-readme/already-guessed.png)
 + Additionally, any input other than a single letter will be considered invalid, and it will not result in the deduction of a life.
+  * ![Possible Outcomes](assets/images-readme/invalid-guess.png)
 
 #### Play Again:
-![Play again](assets/images/)
 Whether the player wins or loses the game, a banner of `Play Again` with its current `Victory` or `Game Over` will be displayed. The player has the option to continue playing or quit the game.
+  * ![Possible Outcomes](assets/images-readme/victory.png)
+  * ![Possible Outcomes](assets/images-readme/game-over.png)
+
 
 ### Features Left to Implement
 - Keep track of the scores for each gaming session and create a leaderboard to store the best scores
@@ -94,8 +97,8 @@ Whether the player wins or loses the game, a banner of `Play Again` with its cur
 ## Testing
 
 ### Validator Testing
-- The code has been tested by using [CI PEP8 Online](https://pep8ci.herokuapp.com/). 
-The only error originally found was a blank line left at the end of the file. 
+* [CI PEP8 Online](https://pep8ci.herokuapp.com/). 
+   * No errors were returned.
 ![PEP8 CI Validation](assets/images-readme/ci-python-linter.png)
 
 ### Manual Testing
@@ -104,6 +107,9 @@ The only error originally found was a blank line left at the end of the file.
 - The issue I encountered was an ANSI escape codes for colors (e.g., [31m) being included in the text I am passing to the typewriter() function. The issue is that the colorama.init(autoreset=True) line is resetting the color codes to their default values after each call to typewriter(), which was causing the color codes to be stripped. To fix this, I needed to avoid resetting the color codes automatically. Instead, I manually reset the color codes after calling the typewriter() function and I created the colors.strip_color_codes() function for this purpose. In the game_effects file, I attached the resource link to fix this issue.
 
 - Another issue I found was when the text statements from the game were displaying on the console, the hangman stage and the letter were also being affected by their color so I  manually reset the color codes with print(C.Reset) after calling the typewriter() or print()function, I ensure that the colors will not affect the hangman and word in the terminal.
+
+### Remaining Bugs
+* No bugs remaining from far as I know.
 
 [Back to top](<#table-of-contents>)
 
@@ -115,7 +121,7 @@ The only error originally found was a blank line left at the end of the file.
 - [Visual Studio Code](https://code.visualstudio.com/) - used as the coding environment.
 - [GitHub](https://github.com/) - to store the repository for submission.
 - [Lucid](https://www.lucidchart.com) - to create the mock-up in preparation for the project.
-- [Patorjk](http://patorjk.com/software/taag/#p=display&h=0&v=0&f=Big&t=HANGMAN%0AYOU%20WON!%0AGAME%20OVER%0APLAY%20AGAIN) - to create text to ASCII Art for the logo and banners layout for the game.
+- [Patorjk](http://patorjk.com/software/taag/#p=display&h=2&v=2&f=Small&t=HANGMAN%0AYOU%20WON!%0AGAME%20OVER%0APLAY%20AGAIN) - to create text to ASCII Art for the logo and banners layout for the game.
 - [Heroku](https://id.heroku.com/)- to deploy the live version of the terminal
 - [Words](https://www.hangmanwords.com/words) -the source of words for the game.
 - Random - to randomize the choices of the computer player.
@@ -134,9 +140,21 @@ The version control was maintained using git within Visual Studio Code to push c
  * Use the `"git push"` command, which pushes the committed changes to the main repository. 
 
  ### Page Deployment
+ The app was deployed to Heroku CLI. The steps to deploy are as follows:
 
+ * After creating an account and logging in, click `"New"` to create a new app from the dashboard.
+ * Create a unique name for the app and select my region; press `"Create app"`.
+ * Go to `"Settings"` and navigate to `Config Vars`.
+ * Add Config Vars. 
+   * For this app was only used: `KEY` = `PORT` : `VALUE` = `8000`.
+ * Add buildpacks `Python` and `NodeJS` - in this order.
+ * Click the `Deploy Branch`.
+ * Scroll Down to Deployment Method and select GitHub.
+ * Select the repository to be deployed and connect to Heroku.
+ * Scroll down to deploy: 
+    * `Option 1` is selecting Automatic deploys (Will Update Automatically with every "git push"). This was chosen for this project.
 
- Visit the live deployment [Hangman Game]()
+ * Live deployment [Hangman Game]()
 
  [Back to top](<#table-of-contents>)
 
@@ -159,13 +177,7 @@ The following pages were consulted throughout the coding process:
  [Back to top](<#table-of-contents>)
 
  ## Acknowledgments
-
+A special acknowledgment to my Mentor [Martina Terlevic](https://github.com/SephTheOverwitch) for her advice, support and encouragement.
 
  [Back to top](<#table-of-contents>)
 
-
-## Creating the Heroku app
-When you create the app, you will need to
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-Connect your GitHub repository and deploy as normal.
