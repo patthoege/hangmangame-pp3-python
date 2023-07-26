@@ -37,7 +37,7 @@ def game(word):
     print("\n")
     # a while loop will run until user guess or runs out of tries
     while not guessed and remaining_attempts > 0:
-        guess = input(C.M + "Enter a letter: ").upper()
+        guess = input(C.B + "Enter a letter: ").upper()
         # first condition: guessing a letter
         if len(guess) == 1 and guess.isalpha():
             # conditional block
@@ -98,7 +98,7 @@ def play_again_or_quit():
         elif choice == "N":
             return False
         else:
-            print(C.R + "Invalid choice. Please enter 'Y' OR 'N'.")
+            print(C.R + "Invalid choice. Please enter 'Y' or 'N'.")
 
 
 def game_rules():
@@ -106,16 +106,16 @@ def game_rules():
     Function to ask the player if they want to read the game rules
     """
     while True:
-       typewriter(C.C + "Do you want to read the game rules?(Y/N)")
-       answer = input().upper().strip()
-       if answer == "Y":
+        typewriter(C.C + "Do you want to read the game rules?(Y/N)")
+        answer = input().upper().strip()
+        if answer == "Y":
             print(game_ascii_art.RULES)
             return True
-       elif answer == "N":
-            print(C.Y + "Let's get started!\n")
+        elif answer == "N":
+            typewriter(C.Y + "Let's get started!\n")
             return False
-       else:
-            print(C.R + "Invalid choice. Please enter 'Y' OR 'N'.")
+        else:
+            print(C.R + "Invalid choice. Please enter 'Y' or 'N'.")
 
 
 def typewriter(text):
@@ -125,7 +125,7 @@ def typewriter(text):
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(.05)
+        time.sleep(.03)
     print()
 
 
@@ -136,13 +136,15 @@ def main():
     """
     # printing starting game
     print(game_ascii_art.LOGO)
-    game_rules()
     typewriter(C.R + "Welcome to Hangman!")
     time.sleep(1)
-    user_name = input(C.Y + "Enter your name:")
-    typewriter("Hi " + user_name + "! Time to play! =D")
+    game_rules()
+    time.sleep(3)
+    typewriter(C.Y + "Enter your name:")
+    user_name = input().strip()
+    typewriter(C.Y + "Hi " + user_name + "! Time to play! =D")
     time.sleep(1)
-    typewriter("Start guessing...\n")
+    typewriter(C.C + "Start guessing...\n")
     time.sleep(0.5)
 
     print(C.Reset)
