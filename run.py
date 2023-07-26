@@ -81,7 +81,6 @@ def game(word):
             print(C.Reset)
         print(display_hangman(remaining_attempts))
         print(secret_word)
-        print(word)
 
     # check whether the player guess the word correctly or ran out of tries
     if guessed:
