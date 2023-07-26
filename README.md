@@ -5,7 +5,7 @@ The Hangman Game application provides users with the opportunity to engage in a 
 Throughout the game, the user may encounter three potential scenarios when making a letter choice: the letter is present in the word, the letter is not part of the word, or the letter has been previously guessed by the player. Additionally, any input other than a single letter will be considered invalid, and it will not result in the deduction of a life.
 
 Once the game is over the user is presented with the option to initiate another round or exit the application.
-![Hangman Game](assets/images/)
+![Hangman Game](assets/images-readme/amiresponsive.png)
 
 
 
@@ -70,7 +70,7 @@ Make the game more challenging by introducing multiple difficulty levels for the
 ### Existing Features:
 
 #### Landing Page:
-![Landing Page](assets/images-readme/)
+![Landing Page](assets/images-readme/landing-page.png)
 The landing page displays the title of the game, the name of the developer, and a section with game rules. Next, the player has the choice to read the rules of the game or dive straight to play the game. Below this section, there is a prompt for the user to enter their name to begin the game.
 
 #### Possible Outcomes:
