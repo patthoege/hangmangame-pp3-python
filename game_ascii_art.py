@@ -9,7 +9,7 @@ from game_effects import GameColors as C
 #logo start game
 
 LOGO = (
- C.Red 
+ C.R 
  + r'''
               -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- 
                _    _              _   _    _____   __  __              _   _                        
@@ -30,7 +30,7 @@ LOGO = (
 # rules of the game
 
 RULES = (
- C.Blue
+ C.B
  + r"""
     -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
    x   _______________________________________________________________________________   x
@@ -57,7 +57,7 @@ RULES = (
 #banner for the next game
 
 PLAY_AGAIN = (
- C.Blue
+ C.B
  + r"""
   -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-
   _____    _                  __     __                _____              _____   _   _ 
@@ -75,7 +75,7 @@ PLAY_AGAIN = (
 # banner victory
 
 VICTORY = (
- C.Yellow
+ C.Y
  + r"""
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-
          __     __   ____    _    _    __          __   ____    _   _   _                       
@@ -92,7 +92,7 @@ VICTORY = (
 #banner game over
 
 GAME_OVER = (
-  C.Red
+  C.R
   + r"""           
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-                                                                                        
       _____              __  __   ______      ____   __      __  ______   _____            

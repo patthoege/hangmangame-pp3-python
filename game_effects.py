@@ -8,12 +8,12 @@ class GameColors():
     """
     Holds a color shortcut library for the text in the game
     """
-    Red = Fore.RED
-    Green = Fore.GREEN
-    Blue = Fore.BLUE
-    Yellow = Fore.YELLOW
-    Magenta = Fore.MAGENTA
-    Cyan = Fore.CYAN
+    R = Fore.RED
+    G = Fore.GREEN
+    B = Fore.BLUE
+    Y = Fore.YELLOW
+    M = Fore.MAGENTA
+    C = Fore.CYAN
     Reset = Fore.RESET
 
 def strip_color_codes(text):
