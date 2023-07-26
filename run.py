@@ -43,12 +43,15 @@ def game(word):
             # conditional block
             if guess in guessed_letters:
                 print(C.Y + "You already guessed the letter {}".format(guess))
+                print(C.Reset)
             elif guess not in word:
                 print(C.Y + " {} is not in the word".format(guess))
+                print(C.Reset)
                 remaining_attempts -= 1
                 guessed_letters.append(guess)
             else:
                 print(C.G + "Great!{}, is in the word!".format(guess))
+                print(C.Reset)
                 guessed_letters.append(guess)
                 new_word_list = list(secret_word)
                 index = [i for i, letter in enumerate(word) if letter == guess]
@@ -63,16 +66,19 @@ def game(word):
             # conditional block
             if guess in guessed_letters:
                 print(C.G + "Great!{}, is in the word!".format(guess))
+                print(C.Reset)
             elif guess != word:
                 print(C.Y + "Unfortunately{} is not in the word".format(guess))
                 remaining_attempts -= 1
                 guessed_words.append(guess)
+                print(C.Reset)
             else:
                 guessed = True
                 secret_word = word
         # third condition: something other than a single letter
         else:
             print(C.R + "Not a valid guess")
+            print(C.Reset)
         print(display_hangman(remaining_attempts))
         print(secret_word)
         print(word)
@@ -140,7 +146,7 @@ def main():
     time.sleep(1)
     game_rules()
     time.sleep(3)
-    typewriter(C.Y + "Enter your name:")
+    typewriter(C.Y + "Enter your name:\n")
     user_name = input().strip()
     typewriter(C.Y + "Hi " + user_name + "! Time to play! =D")
     time.sleep(1)
