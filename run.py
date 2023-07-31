@@ -19,6 +19,19 @@ def get_random_word(word_list):
     word = random.choice(word_list)
     return word.upper()
 
+def display_word(word, guessed_letters):
+    """
+    Functions creates a string for the current state of the word,
+    showing guessed letters and underscores for unknown letters.
+    """
+    secret_word = ""
+    for letter in word:
+        if letter in guessed_letters:
+            secret_word += letter
+        else:
+            secret_word += "_"
+    return secret_word
+
 
 def game(word):
     """
@@ -166,3 +179,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

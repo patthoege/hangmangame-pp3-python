@@ -1,12 +1,11 @@
 # Hangman Game
 
-The Hangman Game application provides users with the opportunity to engage in a classic game of chance against the computer. The gameplay commences with the user inputting their name. Subsequently, the game displays successive stages of the hangman from its initial stage while also selecting a random word, concealed at the onset of the game. Throughout the game, the player's objective is to guess the letters forming the chosen word correctly, with six lives corresponding to the hangman's body parts - head, body, right arm, left arm, right leg, and left leg. The outcome of each round is determined by the player's success in guessing the correct letters of the word.
+The Hangman Game application provides users with the opportunity to engage in a classic game of chance against the computer. The gameplay commences with the user inputting their name after displaying the prompt asking the player if they would want to read the rules of the game or choose to start the game. Subsequently, the game displays successive stages of the hangman from its initial stage while also selecting a random word, concealed at the onset of the game. Throughout the game, the player's objective is to guess the letters forming the chosen word correctly, with six lives corresponding to the hangman's body parts - head, body, right arm, left arm, right leg, and left leg. The outcome of each round is determined by the player's success in guessing the correct letters of the word.
 
 Throughout the game, the user may encounter three potential scenarios when making a letter choice: the letter is present in the word, the letter is not part of the word, or the letter has been previously guessed by the player. Additionally, any input other than a single letter will be considered invalid, and it will not result in the deduction of a life.
 
 Once the game is over the user is presented with the option to initiate another round or exit the application.
 ![Hangman Game](assets/images-readme/amiresponsive.png)
-
 
 
 ## Table of Contents
@@ -71,12 +70,13 @@ Make the game more challenging by introducing multiple difficulty levels for the
 
 #### Landing Page:
 ![Landing Page](assets/images-readme/landing-page.png)
-The landing page displays the title of the game, the name of the developer, and a section with game rules. Next, the player has the choice to read the rules of the game or dive straight to play the game. Below this section, there is a prompt for the user to enter their name to begin the game.
+The landing page displays the title of the game, the name of the developer, and a section with game rules where the player has the choice to read it or start the game. Next, the player has the choice to read the rules of the game or dive straight to play the game. Below this section, there is a prompt for the user to enter their name to begin the game.
 
 #### Possible Outcomes:
 The player may encounter three potential scenarios when making a letter choice: 
-+ The letter `is` present in the word, the letter  `is not` part of the word.
++ The letter `is` present in the word, the letter `is not` part of the word.
   * ![Possible Outcomes](assets/images-readme/guess-is-in-word.png)
+  * ![Possible Outcomes](assets/images-readme/guess-is-not-in-word.png)
 + The letter has been previously guessed by the player. 
   * ![Possible Outcomes](assets/images-readme/already-guessed.png)
 + Additionally, any input other than a single letter will be considered invalid, and it will not result in the deduction of a life.
@@ -168,6 +168,7 @@ To understand and implement the logic required for the game, I found the followi
 
 The following pages were consulted throughout the coding process:
 + [Time: Sleep](https://www.learndatasci.com/solutions/python-timer/) - as a reference how to add the execution time before the game begins. 
++ [List](https://www.programiz.com/python-programming/methods/built-in/list) - 
 + [How to Use Colorama in Python](https://linuxhint.com/colorama-python/) - source built-in Python modules to display the text in different colors.
 + [How To Print Colored Text in Python (Colorama Tutorial)](https://www.youtube.com/watch?v=u51Zjlnui4Y) - to learn how to add text color in the print statements to enhance the overall user experience.
 + [How to Add ASCII Art Text Banner to a Python Program](https://www.youtube.com/watch?v=Xh7bEIvUQfM) - to learn how to add ASCII Art Text Banner.
