@@ -33,27 +33,44 @@ def display_word(word, guessed_letters):
     return secret_word
 
 
+def get_guess(guess):
+    """
+    Get a valid letter guess from the player and returns a single letter 
+    guessed by the player.
+    """
+    while True:
+        if len(guess) != 1 or not guess.isalpha():
+            print(C.R + "Invalid input. Please enter a single letter.")
+            print(C.Reset) 
+            guess = input(C.B + "Enter a letter: ").upper()
+        else:
+            return guess
+
+
+def is_guess_correct(word, guess):
+    """
+    This function check two args if the guessed letter is correct.
+    the boolean return true if guess is correct.
+    """
+    return guess in word
+
+
 def game(word):
     """
-     This function manages the Hangman game, taking player inputs,
-     updating the game state, and providing appropriate feedback
-     to the player until the game is over.
+     This function manages the Hangman game, updating the game state,
+     and providing appropriate feedback to the player until the game is over.
     """
     # variables
-    secret_word = "_" * len(word)
     guessed = False
     guessed_letters = []
-    guessed_words = []
     remaining_attempts = 6
+    # print hangman and display the secret word
     print(display_hangman(remaining_attempts))
-    print(secret_word)
+    print(display_word(word, guessed_letters))
     print("\n")
     # a while loop will run until user guess or runs out of tries
     while not guessed and remaining_attempts > 0:
-        guess = input(C.B + "Enter a letter: ").upper()
-        # first condition: guessing a letter
-        if len(guess) == 1 and guess.isalpha():
-            # conditional block
+            guess = get_guess(input(C.B + "Enter a letter: ").upper())
             if guess in guessed_letters:
                 print(C.Y + "You already guessed the letter {}".format(guess))
                 print(C.Reset)
@@ -66,36 +83,15 @@ def game(word):
                 print(C.G + "Great!{}, is in the word!".format(guess))
                 print(C.Reset)
                 guessed_letters.append(guess)
-                new_word_list = list(secret_word)
-                index = [i for i, letter in enumerate(word) if letter == guess]
-                for i in index:
-                    new_word_list[i] = guess
-                secret_word = "".join(new_word_list)
-                if "_" not in secret_word:
-                    guessed = True
-                    secret_word = word
-        # second condition: guessing a word
-        elif len(guess) == len(word) and guess.isalpha():
-            # conditional block
-            if guess in guessed_letters:
-                print(C.G + "Great!{}, is in the word!".format(guess))
-                print(C.Reset)
-            elif guess != word:
-                print(C.Y + "Unfortunately{} is not in the word".format(guess))
-                remaining_attempts -= 1
-                guessed_words.append(guess)
-                print(C.Reset)
-            else:
-                guessed = True
-                secret_word = word
-        # third condition: something other than a single letter
-        else:
-            print(C.R + "Not a valid guess")
-            print(C.Reset)
-        print(display_hangman(remaining_attempts))
-        print(secret_word)
 
-    # check whether the player guess the word correctly or ran out of tries
+            secret_word = display_word(word, guessed_letters)
+            print(display_hangman(remaining_attempts))
+            print(secret_word)
+            print(word)
+
+            if secret_word == word:
+                guessed = True
+    # displays the current banner if guessed or not guessed. 
     if guessed:
         print(game_ascii_art.VICTORY)
         print(C.G + "Good job! {} is in the word!".format(guess))
@@ -171,7 +167,6 @@ def main():
     while True:
         word = get_random_word(word_list)
         game(word)
-        print(game_ascii_art.PLAY_AGAIN)
         if not play_again_or_quit():
             print(C.C + "Thanks for playing! Guess me soon =D")
             sys.exit()
@@ -179,4 +174,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
