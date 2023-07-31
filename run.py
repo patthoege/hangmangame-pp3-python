@@ -19,6 +19,7 @@ def get_random_word(word_list):
     word = random.choice(word_list)
     return word.upper()
 
+
 def display_word(word, guessed_letters):
     """
     Functions creates a string for the current state of the word,
@@ -35,13 +36,13 @@ def display_word(word, guessed_letters):
 
 def get_guess(guess):
     """
-    Get a valid letter guess from the player and returns a single letter 
+    Get a valid letter guess from the player and returns a single letter
     guessed by the player.
     """
     while True:
         if len(guess) != 1 or not guess.isalpha():
             print(C.R + "Invalid input. Please enter a single letter.")
-            print(C.Reset) 
+            print(C.Reset)
             guess = input(C.B + "Enter a letter: ").upper()
         else:
             return guess
@@ -91,7 +92,11 @@ def game(word):
 
             if secret_word == word:
                 guessed = True
-    # displays the current banner if guessed or not guessed. 
+            
+            print("Guessed letters: ", ", ".join(guessed_letters))  
+
+            
+    # displays the current banner if guessed or not guessed.
     if guessed:
         print(game_ascii_art.VICTORY)
         print(C.G + "Good job! {} is in the word!".format(guess))
@@ -105,7 +110,7 @@ def play_again_or_quit():
     Function to chose whether the player wants to play again or quit the game.
     """
     while True:
-        choice = input(C.Y + "Next Round?(Y/N) ").upper()
+        choice = input(C.C + "Next Round?(Y/N) ").upper()
         if choice == "Y":
             print(C.Reset)
             return True
@@ -153,7 +158,7 @@ def main():
     typewriter(C.R + "Welcome to Hangman!")
     time.sleep(1)
     game_rules()
-    time.sleep(3)
+    time.sleep(2)
     typewriter(C.Y + "Enter your name:")
     print(C.Reset)
     user_name = input().strip()
@@ -168,7 +173,7 @@ def main():
         word = get_random_word(word_list)
         game(word)
         if not play_again_or_quit():
-            print(C.C + "Thanks for playing! Guess me soon =D")
+            print(C.Y + "Thanks for playing! Guess me soon =D")
             sys.exit()
 
 

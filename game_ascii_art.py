@@ -55,21 +55,6 @@ RULES = (
  """
 )
 
-#banner for the next game
-
-PLAY_AGAIN = (
- C.B
- + r"""
-  -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
-  ___ _       __   __         __       __  _  _      
- | _ \ |    /_\ \ / /   /_\ / __| /_\ |_ _| \| |
- |  _/ |__ / _ \ V /   / _ \ (_ |/ _ \_| || .` |
- |_| |____/_/ \_\_|   /_/ \_\___/_/ \_\___|_|\_|
-
-  -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
- """
-)
-
 
 # banner victory
 
