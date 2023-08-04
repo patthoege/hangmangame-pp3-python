@@ -56,6 +56,14 @@ def is_guess_correct(word, guess):
     return guess in word
 
 
+def update_guessed_letters(guessed_letters, guess):
+    """
+    This functions add two args the guess that the player guessed so far
+    to the set of guessed letters.
+    """
+    guessed_letters.add(guess)
+
+
 def game(word):
     """
      This function manages the Hangman game, updating the game state,
@@ -63,43 +71,41 @@ def game(word):
     """
     # variables
     guessed = False
-    guessed_letters = []
+    guessed_letters = set()
     remaining_attempts = 6
     # print hangman and display the secret word
     print(display_hangman(remaining_attempts))
     print(display_word(word, guessed_letters))
-    print("\n")
-    # a while loop will run until user guess or runs out of tries
+
     while not guessed and remaining_attempts > 0:
-            guess = get_guess(input(C.B + "Enter a letter: ").upper())
-            if guess in guessed_letters:
-                print(C.Y + "You already guessed the letter {}".format(guess))
-                print(C.Reset)
-            elif guess not in word:
-                print(C.Y + " {} is not in the word".format(guess))
-                print(C.Reset)
-                remaining_attempts -= 1
-                guessed_letters.append(guess)
-            else:
-                print(C.G + "Great!{}, is in the word!".format(guess))
-                print(C.Reset)
-                guessed_letters.append(guess)
+        guess = get_guess(input(C.B + "Enter a letter: ")).upper()
+        if guess in guessed_letters:
+            print(C.Y + "You already guessed the letter {}".format(guess))
+            print(C.Reset)
+        elif guess in word:
+            print(C.G + "Great! {} is in the word!".format(guess))
+            print(C.Reset)
+            update_guessed_letters(guessed_letters, guess)
+        else:
+            print(C.Y + "{} is not in the word".format(guess))
+            print(C.Reset)
+            remaining_attempts -= 1
+            update_guessed_letters(guessed_letters, guess)
 
-            secret_word = display_word(word, guessed_letters)
-            print(display_hangman(remaining_attempts))
-            print(secret_word)
-            print(word)
+        secret_word = display_word(word, guessed_letters)
+        print(display_hangman(remaining_attempts))
+        print(secret_word)
+        print(word)
 
-            if secret_word == word:
-                guessed = True
-            
-            print("Guessed letters: ", ", ".join(guessed_letters))  
+        if secret_word == word:
+            guessed = True
 
-            
+        print("Guessed letters: ", ", ".join(guessed_letters))
+
     # displays the current banner if guessed or not guessed.
     if guessed:
         print(game_ascii_art.VICTORY)
-        print(C.G + "Good job! {} is in the word!".format(guess))
+        print(C.C + "Good job! " + word + " is the word!")
     else:
         print(game_ascii_art.GAME_OVER)
         print(C.C + "The word was " + word)
@@ -110,7 +116,7 @@ def play_again_or_quit():
     Function to chose whether the player wants to play again or quit the game.
     """
     while True:
-        choice = input(C.C + "Next Round?(Y/N) ").upper()
+        choice = input(C.Y + "Next Round?(Y/N) ").upper()
         if choice == "Y":
             print(C.Reset)
             return True
@@ -144,7 +150,7 @@ def typewriter(text):
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(.03)
+        time.sleep(.02)
     print()
 
 
@@ -158,10 +164,9 @@ def main():
     typewriter(C.R + "Welcome to Hangman!")
     time.sleep(1)
     game_rules()
-    time.sleep(2)
+    time.sleep(1)
     typewriter(C.Y + "Enter your name:")
-    print(C.Reset)
-    user_name = input().strip()
+    user_name = input()
     typewriter(C.Y + "Hi " + user_name + "! Time to play! =D")
     time.sleep(1)
     typewriter(C.C + "Start guessing...\n")
@@ -173,7 +178,7 @@ def main():
         word = get_random_word(word_list)
         game(word)
         if not play_again_or_quit():
-            print(C.Y + "Thanks for playing! Guess me soon =D")
+            print(C.C + "Thanks for playing! Guess me soon =D")
             sys.exit()
 
 
