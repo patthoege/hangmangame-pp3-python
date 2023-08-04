@@ -46,7 +46,7 @@ RULES = (
    x  |      guessing letters.                                        |  x
    |  |  2 - If too many letters which do not appear in the           |  |
    |  |      word are guessed,the player is hanged and loses.         |  |
-   x  |  3 - As letters in the word are guessed,will be written.      |  x
+   x  |  3 - As letters in the word are guessed, will be written.     |  x
    x  |  4 - The hangman is drawn in 6 parts(for 6 letter guesses)    |  x
    |  |                                                               |  |
    |  |_______________________________________________________________|  |

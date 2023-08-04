@@ -21,7 +21,7 @@ Once the game is over the user is presented with the option to initiate another 
 + [Features](#features "Features")
   + [Existing Features](#existing-features "Existing Features")
     + [Landing Page](#landing-page "Landing Page")
-    + [Play Again](#play-again "Play Again or Quit App")
+    + [Next Round](#next-round "Play Again or Quit App")
   + [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
 + [Testing](#testing "Testing")
   + [Validator Testing](#validator-testing "Validator Testing")
@@ -59,6 +59,7 @@ New users are encouraged to experiment with the computer-based version of the ol
 ### Future Goals:
 Make the game more challenging by introducing multiple difficulty levels for the user to choose to play and implementing a scoring leaderboard.
 
+[Back to top](<#table-of-contents>)
 ### Mock-up:
 ![App functionality Wireframe](assets/images-readme/mock-up.png)
 
@@ -74,7 +75,7 @@ The landing page displays the title of the game, the name of the developer, and 
 
 #### Possible Outcomes:
 The player may encounter three potential scenarios when making a letter choice: 
-+ The letter `is` present in the word, the letter `is not` part of the word.
++ The letter `is` present in the word, the letter `is not` part of the word. Providing the player with a list of the letters that have been already guessed.
   * ![Possible Outcomes](assets/images-readme/guess-is-in-word.png)
   * ![Possible Outcomes](assets/images-readme/guess-is-not-in-word.png)
 + The letter has been previously guessed by the player. 
@@ -82,8 +83,8 @@ The player may encounter three potential scenarios when making a letter choice:
 + Additionally, any input other than a single letter will be considered invalid, and it will not result in the deduction of a life.
   * ![Possible Outcomes](assets/images-readme/invalid-guess.png)
 
-#### Play Again:
-Whether the player wins or loses the game, a banner of `Play Again` with its current `Victory` or `Game Over` will be displayed. The player has the option to continue playing or quit the game.
+#### Next Round:
+After the game, regardless of whether the player wins or loses, a prompt will appear asking if they wish to continue with their current `Victory` or `Game Over`. The player can choose to keep playing or quit the game.  
   * ![Possible Outcomes](assets/images-readme/victory.png)
   * ![Possible Outcomes](assets/images-readme/game-over.png)
 
@@ -108,6 +109,7 @@ Whether the player wins or loses the game, a banner of `Play Again` with its cur
 
 - Another issue I found was when the text statements from the game were displaying on the console, the hangman stage and the letter were also being affected by their color so I  manually reset the color codes with print(C.Reset) after calling the typewriter() or print()function, I ensure that the colors will not affect the hangman and word in the terminal.
 
+
 ### Remaining Bugs
 * No bugs remaining from far as I know.
 
@@ -124,6 +126,7 @@ Whether the player wins or loses the game, a banner of `Play Again` with its cur
 - [Patorjk](http://patorjk.com/software/taag/#p=display&h=2&v=2&f=Small&t=HANGMAN%0AYOU%20WON!%0AGAME%20OVER%0APLAY%20AGAIN) - to create text to ASCII Art for the logo and banners layout for the game.
 - [Heroku](https://id.heroku.com/)- to deploy the live version of the terminal
 - [Words](https://www.hangmanwords.com/words) -the source of words for the game.
+- [AmIResponsive](https://ui.dev/amiresponsive?url=https://hangmangame-pp3-python-d5764adc1207.herokuapp.com/) - the responsive preview image at the top of the README.md 
 - Random - to randomize the choices of the computer player.
 - Colorama - to add text readability by adding a touch of color to the print statements and overall enhanced user experience.
 

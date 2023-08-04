@@ -95,7 +95,6 @@ def game(word):
         secret_word = display_word(word, guessed_letters)
         print(display_hangman(remaining_attempts))
         print(secret_word)
-        print(word)
 
         if secret_word == word:
             guessed = True
