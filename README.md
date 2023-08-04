@@ -5,7 +5,9 @@ The Hangman Game application provides users with the opportunity to engage in a 
 Throughout the game, the user may encounter three potential scenarios when making a letter choice: the letter is present in the word, the letter is not part of the word, or the letter has been previously guessed by the player. Additionally, any input other than a single letter will be considered invalid, and it will not result in the deduction of a life.
 
 Once the game is over the user is presented with the option to initiate another round or exit the application.
+
 ![Hangman Game](assets/images-readme/amiresponsive.png)
+* Live deployment [Hangman Game](https://hangmangame-pp3-python-d5764adc1207.herokuapp.com/)
 
 
 ## Table of Contents
@@ -157,7 +159,7 @@ The version control was maintained using git within Visual Studio Code to push c
  * Scroll down to deploy: 
     * `Option 1` is selecting Automatic deploys (Will Update Automatically with every "git push"). This was chosen for this project.
 
- * Live deployment [Hangman Game]()
+ * Live deployment [Hangman Game](https://hangmangame-pp3-python-d5764adc1207.herokuapp.com/)
 
  [Back to top](<#table-of-contents>)
 
@@ -171,7 +173,7 @@ To understand and implement the logic required for the game, I found the followi
 
 The following pages were consulted throughout the coding process:
 + [Time: Sleep](https://www.learndatasci.com/solutions/python-timer/) - as a reference how to add the execution time before the game begins. 
-+ [List](https://www.programiz.com/python-programming/methods/built-in/list) - 
++ [Set()function](https://www.programiz.com/python-programming/methods/built-in/set) - to return the guessed letters.
 + [How to Use Colorama in Python](https://linuxhint.com/colorama-python/) - source built-in Python modules to display the text in different colors.
 + [How To Print Colored Text in Python (Colorama Tutorial)](https://www.youtube.com/watch?v=u51Zjlnui4Y) - to learn how to add text color in the print statements to enhance the overall user experience.
 + [How to Add ASCII Art Text Banner to a Python Program](https://www.youtube.com/watch?v=Xh7bEIvUQfM) - to learn how to add ASCII Art Text Banner.
