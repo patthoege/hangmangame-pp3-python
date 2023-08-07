@@ -59,7 +59,7 @@ The primary goal for current users is to be entertained and engaged by playing m
 New users are encouraged to experiment with the computer-based version of the old-fashioned Hangman Game and experience the thrill of guessing random words.
 
 ### Future Goals:
-Make the game more challenging by introducing multiple difficulty levels for the user to choose to play and implementing a scoring leaderboard.
+Make the game more challenging by introducing multiple difficulty levels for the user to choose to play and implementing a scoring leaderboard. Moreover, I intend to enhance the website's user appeal through the implementation of aesthetic styling and a structured layout. To achieve this objective, I need to use a web framework such as Flask or Django, which allows to serve web pages and static assets like CSS files. 
 
 [Back to top](<#table-of-contents>)
 ### Mock-up:
@@ -94,6 +94,8 @@ After the game, regardless of whether the player wins or loses, a prompt will ap
 ### Features Left to Implement
 - Keep track of the scores for each gaming session and create a leaderboard to store the best scores
 - Implement multiple difficulty levels.
+- Django framework to implement styling and a structured layout.
+
 
 [Back to top](<#table-of-contents>)
 
@@ -184,6 +186,8 @@ The following pages were consulted throughout the coding process:
 
  ## Acknowledgments
 A special acknowledgment to my Mentor [Martina Terlevic](https://github.com/SephTheOverwitch) for her advice, support and encouragement.
+
+ Patricia Höge 2023.
 
  [Back to top](<#table-of-contents>)
 

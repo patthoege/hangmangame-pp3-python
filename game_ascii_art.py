@@ -42,10 +42,9 @@ RULES = (
    |  |                         GAME RULES                            |  |
    x  |               ===============================                 |  x
    |  |                                                               |  |
-   |  |  1 - The player try to figure out an unknown word by          |  |
-   x  |      guessing letters.                                        |  x
-   |  |  2 - If too many letters which do not appear in the           |  |
-   |  |      word are guessed,the player is hanged and loses.         |  |
+   |  |  1 - Try to find the secret word by choosing letters.         |  |
+   |  |  2 - If you guess lots of wrong letters, you might            |  |
+   |  |     lose and see a hangman.                                   |  |
    x  |  3 - As letters in the word are guessed, will be written.     |  x
    x  |  4 - The hangman is drawn in 6 parts(for 6 letter guesses)    |  x
    |  |                                                               |  |
