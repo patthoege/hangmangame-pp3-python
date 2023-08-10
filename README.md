@@ -92,7 +92,7 @@ After the game, regardless of whether the player wins or loses, a prompt will ap
 
 
 ### Features Left to Implement
-- Keep track of the scores for each gaming session and create a leaderboard to store the best scores
+- Keep track of the scores for each gaming session and create a leaderboard to store the best scores.
 - Implement multiple difficulty levels.
 - Django framework to implement styling and a structured layout.
 
@@ -128,8 +128,8 @@ After the game, regardless of whether the player wins or loses, a prompt will ap
 - [GitHub](https://github.com/) - to store the repository for submission.
 - [Lucid](https://www.lucidchart.com) - to create the mock-up in preparation for the project.
 - [Patorjk](http://patorjk.com/software/taag/#p=display&h=2&v=2&f=Small&t=HANGMAN%0AYOU%20WON!%0AGAME%20OVER%0APLAY%20AGAIN) - to create text to ASCII Art for the logo and banners layout for the game.
-- [Heroku](https://id.heroku.com/)- to deploy the live version of the terminal
-- [Words](https://www.hangmanwords.com/words) -the source of words for the game.
+- [Heroku](https://id.heroku.com/) - to deploy the live version of the terminal.
+- [Words](https://www.hangmanwords.com/words) - the source of words for the game.
 - [AmIResponsive](https://ui.dev/amiresponsive?url=https://hangmangame-pp3-python-d5764adc1207.herokuapp.com/) - the responsive preview image at the top of the README.md 
 - Random - to randomize the choices of the computer player.
 - Colorama - to add text readability by adding a touch of color to the print statements and overall enhanced user experience.

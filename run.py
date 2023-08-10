@@ -30,7 +30,7 @@ def display_word(word, guessed_letters):
         if letter in guessed_letters:
             secret_word += letter
         else:
-            secret_word += "_"
+            secret_word += "_ "
     return secret_word
 
 
