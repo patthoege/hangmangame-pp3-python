@@ -24,6 +24,7 @@ Once the game is over the user is presented with the option to initiate another 
   + [Existing Features](#existing-features "Existing Features")
     + [Landing Page](#landing-page "Landing Page")
     + [Game Rules](#game-rules "Game Rules")
+    + [Enter Username](#enter-username "Enter Username")
     + [Possible Outcomes](#possible-outcomes "Possible Outcomes")
     + [Next Round](#next-round "Play Again or Quit App")
   + [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
@@ -75,13 +76,18 @@ Make the game more challenging by introducing multiple difficulty levels for the
 
 #### Landing Page:
 ![Landing Page](assets/images-readme/landing-page.png)
-The landing page displays the title of the game, the name of the developer, and a section with game rules where the player has the choice to read it or start the game. Next, the player has the choice to read the rules of the game or dive straight to play the game. Below this section, there is a prompt for the user to enter their name to begin the game.
+
+The landing page displays the game's title along with the developer's name. To add an element of visual appeal, the text is rendered in red color, and the sentences are animated using the typewriter function. This approach is aimed at enriching the user's experience.
 
 ### Game Rules
 Players have the option to review the game rules before beginning the Hangman game. They can do so by entering either `Y` or `N`. If any other letter or input is provided, they will be prompted with an invalid choice message until the player enters the correct input.
 
 * ![Game Rules Invalid Input](assets/images-readme/game-rules-invalid-input.png)
 * ![Game Rules](assets/images-readme/game-rules.png)
+
+### Enter Username
+Beneath the rules section, a prompt awaits the user, inviting them to input their name to initiate the game. An image illustrating this can be found above, in the "Game Rules" picture.
+
 
 #### Possible Outcomes:
 The player may encounter three potential scenarios when making a letter choice: 
@@ -201,4 +207,3 @@ A special acknowledgment to my Mentor [Martina Terlevic](https://github.com/Seph
  Patricia Höge 2023.
 
  [Back to top](<#table-of-contents>)
-
