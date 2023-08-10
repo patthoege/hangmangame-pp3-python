@@ -23,6 +23,8 @@ Once the game is over the user is presented with the option to initiate another 
 + [Features](#features "Features")
   + [Existing Features](#existing-features "Existing Features")
     + [Landing Page](#landing-page "Landing Page")
+    + [Game Rules](#game-rules "Game Rules")
+    + [Possible Outcomes](#possible-outcomes "Possible Outcomes")
     + [Next Round](#next-round "Play Again or Quit App")
   + [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
 + [Testing](#testing "Testing")
@@ -75,6 +77,12 @@ Make the game more challenging by introducing multiple difficulty levels for the
 ![Landing Page](assets/images-readme/landing-page.png)
 The landing page displays the title of the game, the name of the developer, and a section with game rules where the player has the choice to read it or start the game. Next, the player has the choice to read the rules of the game or dive straight to play the game. Below this section, there is a prompt for the user to enter their name to begin the game.
 
+### Game Rules
+Players have the option to review the game rules before beginning the Hangman game. They can do so by entering either `Y` or `N`. If any other letter or input is provided, they will be prompted with an invalid choice message until the player enters the correct input.
+
+* ![Game Rules Invalid Input](assets/images-readme/game-rules-invalid-input.png)
+* ![Game Rules](assets/images-readme/game-rules.png)
+
 #### Possible Outcomes:
 The player may encounter three potential scenarios when making a letter choice: 
 + The letter `is` present in the word, the letter `is not` part of the word. Providing the player with a list of the letters that have been already guessed.
@@ -85,10 +93,13 @@ The player may encounter three potential scenarios when making a letter choice:
 + Additionally, any input other than a single letter will be considered invalid, and it will not result in the deduction of a life.
   * ![Possible Outcomes](assets/images-readme/invalid-guess.png)
 
+
+
 #### Next Round:
 After the game, regardless of whether the player wins or loses, a prompt will appear asking if they wish to continue with their current `Victory` or `Game Over`. The player can choose to keep playing or quit the game.  
   * ![Possible Outcomes](assets/images-readme/victory.png)
   * ![Possible Outcomes](assets/images-readme/game-over.png)
+  * ![Possible Outcomes](assets/images-readme/next-round.png)
 
 
 ### Features Left to Implement
