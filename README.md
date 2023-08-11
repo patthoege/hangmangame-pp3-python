@@ -62,7 +62,7 @@ The primary goal for current users is to be entertained and engaged by playing m
 New users are encouraged to experiment with the computer-based version of the old-fashioned Hangman Game and experience the thrill of guessing random words.
 
 ### Future Goals:
-Make the game more challenging by introducing multiple difficulty levels for the user to choose to play and implementing a scoring leaderboard. Moreover, I intend to enhance the website's user appeal through the implementation of aesthetic styling and a structured layout. To achieve this objective, I need to use a web framework such as Flask or Django, which allows to serve web pages and static assets like CSS files. 
+Make the game more challenging by introducing multiple difficulty levels for the user to choose to play and implementing a scoring leaderboard. Moreover, I intend to enhance the website's user appeal through the implementation of aesthetic styling and a structured layout. To achieve this objective, I need to use a web framework such as Flask or Django, which allows me serve web pages and static assets like CSS files. 
 
 [Back to top](<#table-of-contents>)
 ### Mock-up:
@@ -112,6 +112,7 @@ After the game, regardless of whether the player wins or loses, a prompt will ap
 - Keep track of the scores for each gaming session and create a leaderboard to store the best scores.
 - Implement multiple difficulty levels.
 - Django framework to implement styling and a structured layout.
+- While the typewriter is displaying, users currently can input text into the running program, even before the typewriter has finished its operation. I intend to modify this behavior to prevent users from entering input until they are permitted to do so.
 
 
 [Back to top](<#table-of-contents>)
@@ -124,6 +125,11 @@ After the game, regardless of whether the player wins or loses, a prompt will ap
 ![PEP8 CI Validation](assets/images-readme/ci-python-linter.png)
 
 ### Manual Testing
+Any other letter or input is provided in the game rules section, they will be prompted with an invalid choice message until the player enters the correct input.
+* ![Game Rules Invalid Input](assets/images-readme/game-rules-invalid-input.png)
+
+Any input other than a single letter will be considered invalid during the game.
+* ![Possible Outcomes](assets/images-readme/invalid-guess.png)
 
 ### Bugs
 - The issue I encountered was an ANSI escape codes for colors (e.g., [31m) being included in the text I am passing to the typewriter() function. The issue is that the colorama.init(autoreset=True) line is resetting the color codes to their default values after each call to typewriter(), which was causing the color codes to be stripped. To fix this, I needed to avoid resetting the color codes automatically. Instead, I manually reset the color codes after calling the typewriter() function and I created the colors.strip_color_codes() function for this purpose. In the game_effects file, I attached the resource link to fix this issue.

@@ -165,8 +165,10 @@ def main():
     game_rules()
     time.sleep(1)
     typewriter(C.Y + "Enter your name:")
-    user_name = input()
-    typewriter(C.Y + "Hi " + user_name + "! Time to play! =D")
+    user_name = input().strip()
+    if user_name == "":
+        user_name = "Anonymous"
+    typewriter(C.Y + f"Hi {user_name}! Time to play! =D")
     time.sleep(1)
     typewriter(C.C + "Start guessing...\n")
     time.sleep(0.5)
