@@ -76,7 +76,7 @@ def game(word):
     # print hangman and display the secret word
     print(display_hangman(remaining_attempts))
     print(display_word(word, guessed_letters))
-
+    # a while loop to handle the users input
     while not guessed and remaining_attempts > 0:
         guess = get_guess(input(C.B + "Enter a letter: ")).upper()
         if guess in guessed_letters:
@@ -101,7 +101,7 @@ def game(word):
 
         print("Guessed letters: ", ", ".join(guessed_letters))
 
-    # displays the current banner if guessed or not guessed.
+    # displays the current banner if wins or loses the game
     if guessed:
         print(game_ascii_art.VICTORY)
         print(C.C + "Good job! " + word + " is the word!")
@@ -127,7 +127,7 @@ def play_again_or_quit():
 
 def game_rules():
     """
-    Function to ask the player if they want to read the game rules
+    Function to ask the player if they want to read the game rules.
     """
     while True:
         typewriter(C.C + "Do you want to read the game rules?(Y/N)")
@@ -144,7 +144,7 @@ def game_rules():
 
 def typewriter(text):
     """
-    Function to add a typewriter effect to print statements
+    Function to add a typewriter effect to print statements.
     """
     for char in text:
         sys.stdout.write(char)

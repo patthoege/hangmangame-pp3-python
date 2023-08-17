@@ -86,7 +86,8 @@ Players have the option to review the game rules before beginning the Hangman ga
 * ![Game Rules](assets/images-readme/game-rules.png)
 
 ### Enter Username
-Beneath the rules section, a prompt awaits the user, inviting them to input their name to initiate the game. An image illustrating this can be found above, in the "Game Rules" picture.
+Beneath the rules section, a prompt awaits the user, inviting them to input their name or choose to play anonymously to initiate the game. An image illustrating when the user gives their name's input can be found above, in the "Game Rules" picture.
+* ![Input username anonymous](assets/images-readme/input-anonymously.png)
 
 
 #### Possible Outcomes:
