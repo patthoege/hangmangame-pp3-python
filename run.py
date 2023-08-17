@@ -4,7 +4,7 @@ import time
 import sys
 import game_ascii_art
 from words import word_list
-from game_effects import GameColors as C
+from game_effects import GameColors as Col
 from game_effects import strip_color_codes
 from hangman_stages import display_hangman
 
@@ -41,9 +41,9 @@ def get_guess(guess):
     """
     while True:
         if len(guess) != 1 or not guess.isalpha():
-            print(C.R + "Invalid input. Please enter a single letter.")
-            print(C.Reset)
-            guess = input(C.B + "Enter a letter: ").upper()
+            print(Col.R + "Invalid input. Please enter a single letter.")
+            print(Col.Reset)
+            guess = input(Col.B + "Enter a letter: ").upper()
         else:
             return guess
 
@@ -78,17 +78,17 @@ def game(word):
     print(display_word(word, guessed_letters))
     # a while loop to handle the users input
     while not guessed and remaining_attempts > 0:
-        guess = get_guess(input(C.B + "Enter a letter: ")).upper()
+        guess = get_guess(input(Col.B + "Enter a letter: ")).upper()
         if guess in guessed_letters:
-            print(C.Y + "You already guessed the letter {}".format(guess))
-            print(C.Reset)
+            print(Col.Y + "You already guessed the letter {}".format(guess))
+            print(Col.Reset)
         elif guess in word:
-            print(C.G + "Great! {} is in the word!".format(guess))
-            print(C.Reset)
+            print(Col.G + "Great! {} is in the word!".format(guess))
+            print(Col.Reset)
             update_guessed_letters(guessed_letters, guess)
         else:
-            print(C.Y + "{} is not in the word".format(guess))
-            print(C.Reset)
+            print(Col.Y + "{} is not in the word".format(guess))
+            print(Col.Reset)
             remaining_attempts -= 1
             update_guessed_letters(guessed_letters, guess)
 
@@ -104,10 +104,10 @@ def game(word):
     # displays the current banner if wins or loses the game
     if guessed:
         print(game_ascii_art.VICTORY)
-        print(C.C + "Good job! " + word + " is the word!")
+        print(Col.C + "Good job! " + word + " is the word!")
     else:
         print(game_ascii_art.GAME_OVER)
-        print(C.C + "The word was " + word)
+        print(Col.C + "The word was " + word)
 
 
 def play_again_or_quit():
@@ -115,14 +115,14 @@ def play_again_or_quit():
     Function to chose whether the player wants to play again or quit the game.
     """
     while True:
-        choice = input(C.Y + "Next Round?(Y/N) ").upper()
+        choice = input(Col.Y + "Next Round?(Y/N) ").upper()
         if choice == "Y":
-            print(C.Reset)
+            print(Col.Reset)
             return True
         elif choice == "N":
             return False
         else:
-            print(C.R + "Invalid choice. Please enter 'Y' or 'N'.")
+            print(Col.R + "Invalid choice. Please enter 'Y' or 'N'.")
 
 
 def game_rules():
@@ -130,16 +130,16 @@ def game_rules():
     Function to ask the player if they want to read the game rules.
     """
     while True:
-        typewriter(C.C + "Do you want to read the game rules?(Y/N)")
+        typewriter(Col.C + "Do you want to read the game rules?(Y/N)")
         answer = input().upper().strip()
         if answer == "Y":
             print(game_ascii_art.RULES)
             return True
         elif answer == "N":
-            typewriter(C.Y + "Let's get started!\n")
+            typewriter(Col.Y + "Let's get started!\n")
             return False
         else:
-            print(C.R + "Invalid choice. Please enter 'Y' or 'N'.")
+            print(Col.R + "Invalid choice. Please enter 'Y' or 'N'.")
 
 
 def typewriter(text):
@@ -160,26 +160,26 @@ def main():
     """
     # printing starting game
     print(game_ascii_art.LOGO)
-    typewriter(C.R + "Welcome to Hangman!")
+    typewriter(Col.R + "Welcome to Hangman!")
     time.sleep(1)
     game_rules()
     time.sleep(1)
-    typewriter(C.Y + "Enter your name:")
+    typewriter(Col.Y + "Enter your name:")
     user_name = input().strip()
     if user_name == "":
         user_name = "Anonymous"
-    typewriter(C.Y + f"Hi {user_name}! Time to play! =D")
+    typewriter(Col.Y + f"Hi {user_name}! Time to play! =D")
     time.sleep(1)
-    typewriter(C.C + "Start guessing...\n")
+    typewriter(Col.C + "Start guessing...\n")
     time.sleep(0.5)
 
-    print(C.Reset)
+    print(Col.Reset)
 
     while True:
         word = get_random_word(word_list)
         game(word)
         if not play_again_or_quit():
-            print(C.C + "Thanks for playing! Guess me soon =D")
+            print(Col.C + "Thanks for playing! Guess me soon =D")
             sys.exit()
 
 

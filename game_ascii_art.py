@@ -4,12 +4,12 @@ obtained from:
 http://patorjk.com/software/taag/#p=display&h=0&v=0&f=Big&t=HANGMAN%0AYOU%20WON!%0AGAME%20OVER%0APLAY%20AGAIN
 """
 
-from game_effects import GameColors as C
+from game_effects import GameColors as Col
 
 #logo start game                                             
 
 LOGO = (
- C.R 
+ Col.R 
  + r'''
    =======================================================================
     -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
@@ -32,7 +32,7 @@ LOGO = (
 # rules of the game
 
 RULES = (
- C.B
+ Col.B
  + r"""
    ========================================================================
     -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
@@ -58,7 +58,7 @@ RULES = (
 # banner victory
 
 VICTORY = (
- C.Y
+ Col.Y
  + r"""
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-
  __   __ __  __ __  __      __ __  _  _  _
@@ -73,7 +73,7 @@ VICTORY = (
 #banner game over
 
 GAME_OVER = (
-  C.R
+  Col.R
   + r"""           
 -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-                                                                                  
     __       _   __ ___    __ __   __ __ ___
